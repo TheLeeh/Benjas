@@ -3,52 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Página de Juegos</title>
+    <title>Registro de Computadoras Prestadas</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
-            text-align: center;
-            padding: 50px;
+            margin: 20px;
         }
         h1 {
-            color: #333;
+            text-align: center;
         }
-        .game-list {
-            list-style-type: none;
-            padding: 0;
+        form {
+            margin-bottom: 20px;
         }
-        .game-list li {
-            background-color: #fff;
-            margin: 10px 0;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        label {
+            display: block;
+            margin-top: 10px;
         }
-        .game-list li h2 {
-            margin: 0;
-            color: #0073e6;
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
         }
-        .game-list li p {
-            color: #666;
+        th, td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
         }
     </style>
 </head>
 <body>
-    <h1>Bienvenido a Mi Página de Juegos</h1>
-    <ul class="game-list">
-        <li>
-            <h2>Juego 1: Aventuras en el Bosque</h2>
-            <p>Un emocionante juego de aventuras donde explorarás un bosque lleno de misterios.</p>
-        </li>
-        <li>
-            <h2>Juego 2: Carreras de Autos</h2>
-            <p>Compite contra otros corredores en este trepidante juego de carreras.</p>
-        </li>
-        <li>
-            <h2>Juego 3: Puzzle de Colores</h2>
-            <p>Desafía tu mente con este colorido juego de rompecabezas.</p>
-        </li>
-    </ul>
+
+<h1>Registro de Computadoras Prestadas</h1>
+
+<form id="registroForm">
+    <label for="nombre">Nombre del Solicitante:</label>
+    <input type="text" id="nombre" name="nombre" required>
+
+    <label for="computadora">Modelo de la Computadora:</label>
+    <input type="text" id="computadora" name="computadora" required>
+
+    <label for="fechaPrestamo">Fecha de Préstamo:</label>
+    <input type="date" id="fechaPrestamo" name="fechaPrestamo" required>
+
+    <label for="fechaDevolucion">Fecha de Devolución:</label>
+    <input type="date" id="fechaDevolucion" name="fechaDevolucion" required>
+
+    <button type="submit">Registrar</button>
+</form>
+
+<table id="registroTabla">
+    <thead>
+        <tr>
+            <th>Nombre del Solicitante</th>
+            <th>Modelo de la Computadora</th>
+            <th>Fecha de Préstamo</th>
+            <th>Fecha de Devolución</th>
+        </tr>
+    </thead>
+    <tbody>
+    </tbody>
+</table>
+
+<script>
+    document.getElementById('registroForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const nombre = document.getElementById('nombre').value;
+        const computadora = document.getElementById('computadora').value;
+        const fechaPrestamo = document.getElementById('fechaPrestamo').value;
+        const fechaDevolucion = document.getElementById('fechaDevolucion').value;
+
+        const table = document.getElementById('registroTabla').getElementsByTagName('tbody')[0];
+        const newRow = table.insertRow();
+
+        const nombreCell = newRow.insertCell(0);
+        const computadoraCell = newRow.insertCell(1);
+        const fechaPrestamoCell = newRow.insertCell(2);
+        const fechaDevolucionCell = newRow.insertCell(3);
+
+        nombreCell.textContent = nombre;
+        computadoraCell.textContent = computadora;
+        fechaPrestamoCell.textContent = fechaPrestamo;
+        fechaDevolucionCell.textContent = fechaDevolucion;
+
+        document.getElementById('registroForm').reset();
+    });
+</script>
+
 </body>
 </html>
