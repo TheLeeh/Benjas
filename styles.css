@@ -1,0 +1,81 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #f0f8ff; /* Celeste claro */
+}
+
+h1 {
+    text-align: center;
+    color: #007acc; /* Celeste oscuro */
+    animation: fadeIn 2s ease-in-out;
+}
+
+form {
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 2px solid #007acc;
+    border-radius: 10px;
+    background-color: #ffffff; /* Blanco */
+    animation: fadeIn 2s ease-in-out;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+    color: #007acc;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #007acc;
+    border-radius: 5px;
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007acc;
+    color: #ffffff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+button:hover {
+    background-color: #005b99;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+th, td {
+    border: 1px solid #007acc;
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #007acc;
+    color: #ffffff;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #e6f2ff; /* Celeste muy claro */
+}
+
+tbody tr:nth-child(even) {
+    background-color: #ffffff;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
